@@ -37,6 +37,6 @@ app.get('/', function(req, res){
 
 });
 
-app.listen('8080');
+app.listen((process.env.PORT || 5000));
 console.log('API is running on http://localhost:8080');
 module.exports = app;
