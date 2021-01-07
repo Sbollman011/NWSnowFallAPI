@@ -31,7 +31,7 @@ app.get('/', function(req, res){
         var snoqSnowSeasonAPI = $('#conditions_area_d5ec042997234b3797b6799d47bfcadf > div > div > ul > li:nth-child(4) > div:nth-child(2) > ul > li:nth-child(6) > div > span > span')
                                 .text().trim();
         snoqSnowSeasonAPI.split(" ");
-        var snoqSnowSeasonAPI = snoqSnowSeasonAPI[0];
+
         // And now, the JSON format we are going to expose
         var json = {
             snoqSnow24API :snoqSnow24API,
