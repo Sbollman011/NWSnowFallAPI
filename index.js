@@ -14,7 +14,8 @@ app.get('/snoqualmie', function(req, res){
             var $ = cheerio.load(html);
             var  snoqSnow24API = $('#conditions_area_d5ec042997234b3797b6799d47bfcadf > div > div > ul > li:nth-child(4) > div:nth-child(2) > ul > li:nth-child(2) > div > span')
                                     .text().trim();
-            snoqSnow24API = snoqSnow24API.split(" ");
+            snoqSnow24API = snoqSnow24API.split("\n");
+            snoqSnow24API = snoqSnow24API[0];
 
            var snoqSnowSeasonAPI = $('#conditions_area_d5ec042997234b3797b6799d47bfcadf > div > div > ul > li:nth-child(4) > div:nth-child(2) > ul > li:nth-child(6) > div > span > span')
                                     .text().trim();
