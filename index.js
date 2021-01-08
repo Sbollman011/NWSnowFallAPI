@@ -47,11 +47,11 @@ app.get('/baker', function(req, res){
         var $ = cheerio.load(html);
          var bakerSnow24API = $('body > div > header > div.c5h-banner-wrap-full.clearfix > div > div:nth-child(2) > div.small-12.medium-12.large-4.columns > div:nth-child(1) > div > div:nth-child(2) > div.report-snowfall-value.report-snowfall-value-24 > span.unit-i')
                                 .text().trim();
-                                bakerSnow24API.split(" ");
+                                bakerSnow24API.split("″");
 
         var bakerSnowSeasonAPI = $('body > div > header > div.c5h-banner-wrap-full.clearfix > div > div:nth-child(2) > div.small-12.medium-12.large-4.columns > div:nth-child(2) > div > div:nth-child(2) > div > span.unit-i')
                                 .text().trim();
-        bakerSnowSeasonAPI.split(" ");
+        bakerSnowSeasonAPI.split("″");
         
         var json = {
             bakerSnow24API :bakerSnow24API,
@@ -82,7 +82,7 @@ app.get('/baker', function(req, res){
     
            var whiteSnowSeasonAPI = $('#maincontent > section.weather-blocks > div > div:nth-child(2) > div > h2:nth-child(10)')
                                     .text().trim();
-                                    whiteSnowSeasonAPI = whiteSnowSeasonAPI.split(" ");
+                                    whiteSnowSeasonAPI = whiteSnowSeasonAPI.split("″");
                                     whiteSnowSeasonAPI = whiteSnowSeasonAPI[0];
             
             var json = {
