@@ -63,10 +63,15 @@ app.get('/baker', function(req, res){
                                 bakerSnowSeasonAPI = bakerSnowSeasonAPI.split('″');
                                 bakerSnowSeasonAPI = bakerSnowSeasonAPI[0];
 
+        var bakerSnowTemp24API =  $('body > div > header > div.c5h-banner-wrap-full.clearfix > div > div:nth-child(2) > div:nth-child(1) > div.report-block > div.row > div:nth-child(2) > div.report-temp-value > span.unit-i')
+        .text().trim();
+        bakerSnowTemp24API = bakerSnowTemp24API.split(' ');
+
         
         var json = {
             bakerSnow24API :bakerSnow24API,
-            bakerSnowSeasonAPI : bakerSnowSeasonAPI
+            bakerSnowSeasonAPI : bakerSnowSeasonAPI,
+            bakerSnowTemp24API : bakerSnowTemp24API
         };
     
 
