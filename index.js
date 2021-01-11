@@ -71,7 +71,7 @@ app.get('/baker', function(req, res){
         var json = {
             bakerSnow24API :bakerSnow24API,
             bakerSnowSeasonAPI : bakerSnowSeasonAPI,
-            bakerSnowTemp24API : bakerSnowTemp24API
+            bakerWeatherTemp24API : bakerWeatherTemp24API
         };
     
 
@@ -105,10 +105,16 @@ app.get('/baker', function(req, res){
                                     if(whiteSnow24API = "Trace"){
                                         whiteSnow24API = "0";
                                     }
-            
+            var whiteWeather24Temp = $('#maincontent > section.weather-blocks > div > div:nth-child(1) > div > h2:nth-child(6)')
+            .text().trim();
+            whiteWeather24Temp = whiteWeather24Temp.split('summit');
+            whiteWeather24Temp = whiteWeather24Temp[1].split('°');
+            whiteWeather24Temp = whiteWeather24Temp[0];
+
             var json = {
                 whiteSnow24API :whiteSnow24API,
-                whiteSnowSeasonAPI : whiteSnowSeasonAPI
+                whiteSnowSeasonAPI : whiteSnowSeasonAPI,
+                whiteWeather24Temp: whiteWeather24Temp
             };
         
     
@@ -120,7 +126,7 @@ app.get('/baker', function(req, res){
 
 });
 
-
+/*
 app.get('/crystal', function(req, res){
     
     const puppeteer = require('puppeteer');
@@ -217,7 +223,7 @@ puppeteer
   });
 
 });
-
+*/
 
 app.listen((process.env.PORT || 5000));
 //app.listen('8080');
