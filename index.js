@@ -63,15 +63,21 @@ app.get('/baker', function(req, res){
                                 bakerSnowSeasonAPI = bakerSnowSeasonAPI.split('″');
                                 bakerSnowSeasonAPI = bakerSnowSeasonAPI[0];
 
-        var bakerSnowTemp24API =  $('body > div > header > div.c5h-banner-wrap-full.clearfix > div > div:nth-child(2) > div:nth-child(1) > div.report-block > div.row > div:nth-child(2) > div.report-temp-value > span.unit-i')
+        var bakerWeatherTempAPI =  $('body > div > header > div.c5h-banner-wrap-full.clearfix > div > div:nth-child(2) > div:nth-child(1) > div.report-block > div.row > div:nth-child(2) > div.report-temp-value > span.unit-i')
         .text().trim();
-        bakerSnowTemp24API = bakerSnowTemp24API.split(' ');
+        bakerWeatherTempAPI = bakerWeatherTempAPI.split(' '); 
+        bakerWeatherTempAPI = bakerWeatherTempAPI[0].split('°');
+        bakerWeatherTempAPI = bakerWeatherTempAPI[0];        
+
+
+
+
 
         
         var json = {
             bakerSnow24API :bakerSnow24API,
             bakerSnowSeasonAPI : bakerSnowSeasonAPI,
-            bakerWeatherTemp24API : bakerWeatherTemp24API
+            bakerWeatherTempAPI : bakerWeatherTempAPI
         };
     
 
@@ -105,16 +111,20 @@ app.get('/baker', function(req, res){
                                     if(whiteSnow24API = "Trace"){
                                         whiteSnow24API = "0";
                                     }
-            var whiteWeather24Temp = $('#maincontent > section.weather-blocks > div > div:nth-child(1) > div > h2:nth-child(6)')
-            .text().trim();
-            whiteWeather24Temp = whiteWeather24Temp.split('summit');
-            whiteWeather24Temp = whiteWeather24Temp[1].split('°');
-            whiteWeather24Temp = whiteWeather24Temp[0];
+            var whiteWeatherTempAPI = $('#maincontent > section.weather-blocks > div > div:nth-child(1) > div > h2:nth-child(6)')
+                                    .text().trim();
+                                    whiteWeatherTempAPI = whiteWeatherTempAPI.split(' ');
+                                    whiteWeatherTempAPI = whiteWeatherTempAPI[0].split('°');
+                                    whiteWeatherTempAPI = whiteWeatherTempAPI[0];
+
+
+
 
             var json = {
                 whiteSnow24API :whiteSnow24API,
                 whiteSnowSeasonAPI : whiteSnowSeasonAPI,
-                whiteWeather24Temp: whiteWeather24Temp
+                whiteWeatherTempAPI: whiteWeatherTempAPI
+                
             };
         
     
