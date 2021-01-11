@@ -21,7 +21,7 @@ app.get('/snoqualmie', function(req, res){
 
            var snoqSnowSeasonAPI = $('#conditions_area_d5ec042997234b3797b6799d47bfcadf > div > div > ul > li:nth-child(4) > div:nth-child(2) > ul > li:nth-child(6) > div > span > span')
                                     .text().trim();
-            snoqSnowSeasonAPI.split(" ");
+            snoqSnowSeasonAPI.split("\"");
 
             var snoqWeatherTempAPI = $('#conditions_area_d5ec042997234b3797b6799d47bfcadf > div > div > ul > li:nth-child(4) > div:nth-child(2) > div > ul > li:nth-child(1) > div > span > span')
             .text().trim();
