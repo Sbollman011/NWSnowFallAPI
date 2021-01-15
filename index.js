@@ -110,7 +110,7 @@ app.get('/baker', function(req, res){
                                     if(whiteSnow24API = "Trace"){
                                         whiteSnow24API = "0";
                                     }
-            var whiteWeatherTempAPI = $('#maincontent > section.weather-blocks > div > div:nth-child(1) > div > h2:nth-child(6)')
+            var whiteWeatherTempAPI = $('#maincontent > section.weather-blocks > div > div:nth-child(1) > div > h2:nth-child(5) > br')
                                     .text().trim();
                                     whiteWeatherTempAPI = whiteWeatherTempAPI.split(' ');
                                     whiteWeatherTempAPI = whiteWeatherTempAPI[0].split('°');
