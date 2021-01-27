@@ -143,6 +143,31 @@ app.get('/baker', function(req, res){
 
 });
 
+app.get('/bestbuy', function(req, res){
+  const https = require('https');
+
+
+  https.get('https://api.bestbuy.com/v1/products(sku=6434198|sku=642943|sku=6432447|sku=6432446|sku=6430623|sku=6437910|sku=6432657|'+
+  'sku=6432656|sku=6436193|sku=6436192|sku=6445108|sku=6430215|sku=6430624|sku=6432400|sku=6430175|sku=6432445|sku=6430620|sku=6436219|'+
+  'sku=6436223|sku=6436191|sku=6432658|sku=6436196|sku=6432399|sku=6430621|sku=6432655|sku=6436194|sku=6429442|sku=6439299|sku=6438278|sku=6439128|'+
+  'sku=6439385|sku=6437909|sku=6439384|sku=6439127|sku=6439300|sku=6439301|sku=6432653|sku=6432654|sku=6439402|sku=6441172|sku=6444444|sku=6442484|'+
+  'sku=6442485|sku=6444357|sku=6442077|sku=6441020|sku=6442585|sku=6441226|sku=6440913|sku=6444358|sku=6444716|sku=6445157|sku=6439000|sku=6438942|'+
+  'sku=6438941|sku=6426149|sku=6430161|sku=6428324|sku=6430277)?'+
+  'apiKey=AaYoqjtg2rHGdiQAaUFs24hq&sort=onlineAvailability.asc&show=addToCartUrl,onlineAvailability,regularPrice,sku,name&pageSize=60&format=json', (resp) => {
+   data = ' ';
+  
+    // A chunk of data has been received.
+    resp.on('data', (chunk) => {
+      data += chunk;
+    });
+  
+    // The whole response has been received. Print out the result.
+    resp.on('end', () => {
+    
+      res.send(data);
+    });
+  });
+});
 /*
 app.get('/crystal', function(req, res){
     
