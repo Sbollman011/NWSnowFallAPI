@@ -153,7 +153,7 @@ app.get('/bestbuy', function(req, res){
   'sku=6439385|sku=6437909|sku=6439384|sku=6439127|sku=6439300|sku=6439301|sku=6432653|sku=6432654|sku=6439402|sku=6441172|sku=6444444|sku=6442484|'+
   'sku=6442485|sku=6444357|sku=6442077|sku=6441020|sku=6442585|sku=6441226|sku=6440913|sku=6444358|sku=6444716|sku=6445157|sku=6439000|sku=6438942|'+
   'sku=6438941|sku=6426149|sku=6430161|sku=6428324|sku=6430277)?'+
-  'apiKey=AaYoqjtg2rHGdiQAaUFs24hq&sort=onlineAvailability.asc&show=addToCartUrl,onlineAvailability,regularPrice,sku,name&pageSize=60&format=json', (resp) => {
+  'apiKey=WwhAp8KUsEhtE28GxrYEhnD5&sort=onlineAvailability.asc&show=addToCartUrl,onlineAvailability,regularPrice,sku,name&pageSize=60&format=json', (resp) => {
    let data = ' ';
   
     // A chunk of data has been received.
@@ -163,12 +163,21 @@ app.get('/bestbuy', function(req, res){
   
     // The whole response has been received. Print out the result.
     resp.on('end', () => {
-      data = JSON.parse(data);
-      res.send(data);
+        data = JSON.parse(data);
+       console.log(data.products);
+      res.send(data.products);
     });
   });
 });
+
+
+
+
 /*
+
+
+
+
 app.get('/crystal', function(req, res){
     
     const puppeteer = require('puppeteer');
