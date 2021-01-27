@@ -164,6 +164,7 @@ app.get('/bestbuy', function(req, res){
     // The whole response has been received. Print out the result.
     resp.on('end', () => {
       data = JSON.stringify(data);
+      data = data.replace("\\","");
       res.send(data);
     });
   });
