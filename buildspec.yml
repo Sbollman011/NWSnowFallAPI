@@ -8,7 +8,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Compiling the dist folder
-      - npm start
+      - node index.js
   post_build:
     commands:
       - echo Build completed on `date`
