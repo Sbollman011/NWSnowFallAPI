@@ -154,7 +154,7 @@ app.get('/bestbuy', function(req, res){
   'sku=6442485|sku=6444357|sku=6442077|sku=6441020|sku=6442585|sku=6441226|sku=6440913|sku=6444358|sku=6444716|sku=6445157|sku=6439000|sku=6438942|'+
   'sku=6438941|sku=6426149|sku=6430161|sku=6428324|sku=6430277)?'+
   'apiKey=AaYoqjtg2rHGdiQAaUFs24hq&sort=onlineAvailability.asc&show=addToCartUrl,onlineAvailability,regularPrice,sku,name&pageSize=60&format=json', (resp) => {
-   data = ' ';
+   let data = ' ';
   
     // A chunk of data has been received.
     resp.on('data', (chunk) => {
@@ -163,7 +163,7 @@ app.get('/bestbuy', function(req, res){
   
     // The whole response has been received. Print out the result.
     resp.on('end', () => {
-    
+      data = JSON.stringify(data);
       res.send(data);
     });
   });
